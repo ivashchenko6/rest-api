@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 
+	"example.com/rest/db"
 	"example.com/rest/models"
 	"github.com/gin-gonic/gin"
 )
@@ -14,6 +15,8 @@ func main() {
 	server.POST("/events", createEvent)
 
 	server.Run(":8080") //localhost:8080
+
+	db.InitDB()
 
 }
 
